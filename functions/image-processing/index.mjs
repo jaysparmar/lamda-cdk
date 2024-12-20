@@ -1,4 +1,5 @@
-
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
 
 import { GetObjectCommand, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import Sharp from 'sharp';
@@ -7,7 +8,7 @@ const s3Client = new S3Client();
 const S3_ORIGINAL_IMAGE_BUCKET = process.env.originalImageBucketName;
 const S3_TRANSFORMED_IMAGE_BUCKET = process.env.transformedImageBucketName;
 const TRANSFORMED_IMAGE_CACHE_TTL = process.env.transformedImageCacheTTL;
-const cloudfrontUrl = process.env.cloudfrontUrl;
+// const cloudfrontUrl = process.env.cloudfrontUrl;
 const MAX_IMAGE_SIZE = parseInt(process.env.maxImageSize);
 
 export const handler = async (event) => {
@@ -16,6 +17,10 @@ export const handler = async (event) => {
     var operationsPrefix = imagePathArray.pop();
     imagePathArray.shift();
     var originalImagePath = imagePathArray.join('/');
+
+    const cloudfrontUrl = "https://" + event["headers"]["x-meta-cloudfront-url"];
+
+
 
     var startTime = performance.now();
     let originalImageBody;
