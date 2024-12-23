@@ -76,7 +76,7 @@ type ImageDeliveryCacheBehaviorConfig = {
 
 type LambdaEnv = {
     originalImageBucketName: string,
-    transformedImageBucketName?: any;
+    transformedImageBucketName?: string;
     transformedImageCacheTTL: string,
     maxImageSize: string,
 }
