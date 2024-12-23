@@ -323,6 +323,7 @@ export class ImageOptimizationStack extends Stack {
             additionalBehaviors: {
                 '/*.png': imageDeliveryCacheBehaviorConfig,
                 '/*.jpg': imageDeliveryCacheBehaviorConfig,
+                '/*.jpeg': imageDeliveryCacheBehaviorConfig,
             }
         });
 
