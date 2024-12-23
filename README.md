@@ -1,7 +1,7 @@
 ## Image Optimization
 
 
-
+npm i -g aws
 npm i -g aws-cdk
 
 
