@@ -5,12 +5,9 @@ type Config = {
     newBucketName: string
 }
 
-
-
-
 export const config: Config =  {
     env: "dev",
-    stackId: "dev-stack",
+    stackId: "image-optimization-stack",
     createNewBucket: true,
-    newBucketName: "zinz-dev-bucket"
+    newBucketName: "zinzuu-dev-bucket"
 }
